@@ -1,0 +1,29 @@
+#判断是否开启的重写模块
+<IfModule mod_rewrite.c>
+#开启重写引擎
+RewriteEngine On
+#RewriteRule ^(.*)\.html /index2.php?$1 [R=301]
+#RewriteRule ^(.*)\.html /index2.php?$1 [G]
+#RewriteRule ^(.*)\.html http://www.baidu.com [R=301]
+#RewriteRule ^(.*)\.html http://www.baidu.com
+#RewriteRule ^(.*)\.html /index3.php?$1 [R]
+#配置重写条件
+#RewriteCond %{REQUEST_FILENAME}  !-f  [NC]
+#RewriteRule ip.html ip.php [NC]
+#编写重写规则
+#RewriteRule 输入形式   真实url
+#RewriteRule (\d+).html news.php?id=$1
+
+#防盗链 NC = no case
+RewriteCond %{HTTP_REFERER}  !www.quanzhan1.com [NC]
+RewriteRule (jpg|png|gif) daolian.jpg
+</IfModule>
+
+#gzip
+#<ifmodule mod_deflate.c>
+#       #压缩级别为6，可选1-9，推荐为6
+#        DeflateCompressionLevel 6
+#        AddOutputFilterByType DEFLATE text/plain
+#        AddOutputFilterByType DEFLATE text/html
+#        AddOutputFilterByType DEFLATE text/xml
+#</ifmodule>

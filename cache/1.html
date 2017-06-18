@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <script type="text/javascript" src='http://cdn.bootcss.com/jquery/1.11.3/jquery.js'></script>
+  <title>Document</title>
+</head>
+<body>
+<form action="?11" id='login'>
+  <input type="text" name="" id='age'>
+</form>
+</body>
+<script type="text/javascript">
+  $('#age').keyup(function(){
+    var age = $('#age').val();
+    if(age == 18){
+        $('#login').attr('action','?do=login_bak');
+    }
+  });
+</script>
+</html>
